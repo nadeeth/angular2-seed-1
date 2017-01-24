@@ -1,0 +1,32 @@
+<h2>Login Form</h2>
+
+<form (ngSubmit)="submitForm()" [formGroup]="loginForm" novalidate>
+  <div class="form-content">
+    <p>{{loginError}}</p>
+    <label>
+      Email:
+      <input type="email" formControlName="email" class="sd-form-control" placeholder="Enter your email.">
+    </label>
+    <label>
+      Password:
+      <input type="password" formControlName="password" class="sd-form-control" placeholder="Enter your password.">
+    </label>
+    <div class="form-submit">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+
+<div class="form-value">
+  Form value:
+  <pre>
+    {{loginForm.value | json}}
+  </pre>
+  <p>
+    Status: {{loginForm.status}}
+  </p>
+  <p>
+    Valid: {{loginForm.valid}}
+  </p>
+</div>
+

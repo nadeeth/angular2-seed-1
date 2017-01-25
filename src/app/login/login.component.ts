@@ -11,7 +11,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 
   APIResponse: any;
-  loginError: String;
+  loginFeedback: String;
 
   loginForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private loginService: LoginService) {}
@@ -32,12 +32,12 @@ export class LoginComponent implements OnInit {
         this.APIResponse = data;
         if (this.APIResponse.success) {
           //If the user is valid, direct user to home page
-          this.loginError = '';
+          this.loginFeedback = 'Valid User';
           console.log(this.loginService.getToken());
         } else {
           //Else show the error message
-          this.loginError = this.APIResponse.error;
-          console.log(this.loginService.getToken());
+          this.loginFeedback = this.APIResponse.error;
+          console.log(this.loginService.getToken());//Token should be empty
         }
       });
     }

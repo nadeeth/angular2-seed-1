@@ -2,7 +2,7 @@
 
 <form (ngSubmit)="submitForm()" [formGroup]="loginForm" novalidate>
   <div class="form-content">
-    <p>{{loginError}}</p>
+    <p>{{loginFeedback}}</p>
     <label>
       Email:
       <input type="email" formControlName="email" class="sd-form-control" placeholder="Enter your email.">
